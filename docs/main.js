@@ -1,17 +1,17 @@
 console.log("Running JS Code");
 
 /* For Dev Server */
-const routesList = import.meta.glob("./pages/*.md", { as: "raw" });
-const routes = Object.keys(routesList);
-console.log(routes);
+// const routesList = import.meta.glob("./pages/*.md", { as: "raw" });
+// const routes = Object.keys(routesList);
+// console.log(routes);
 
-const page = import.meta.glob(`./pages/*.md"`);
+// const page = import.meta.glob(`./pages/*.md"`);
 
-console.log(pages);
+// console.log(pages);
 
-let content = JSON.parse(pages["./pages/index.md"]);
+// let content = JSON.parse(pages["./pages/index.md"]);
 
-console.log(content);
+// console.log(content);
 
-const el = document.querySelector("#content");
-el.innerHTML = content;
+// const el = document.querySelector("#content");
+// el.innerHTML = content;
