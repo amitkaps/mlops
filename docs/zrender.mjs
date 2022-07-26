@@ -35,7 +35,7 @@ const routes = fs.readdirSync(`${pagesDir}`).map((file) => {
   for (const { name, fileName } of routes) {
     const pageDoc = fs.readFileSync(path.join(pagesDir, fileName), "utf8");
     const pageHtml = renderMarkdocToHtml(pageDoc, config);
-    const page = template.replace(`<!--CONTENT NODE-->`, pageHtml);
+    const page = template.replace(`<!--CONTENT-->`, pageHtml);
     const filePath = `${name}.html`;
     fs.writeFileSync(path.join(outputDir, filePath), page);
     console.log(filePath);
