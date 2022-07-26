@@ -18,7 +18,9 @@
     "@markdoc/markdoc": "^0.1.4",
     "vite": "^3.0.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "page": "^1.11.6"
+  },
   "volta": {
     "node": "16.16.0",
     "npm": "8.15.0"

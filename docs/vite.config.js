@@ -1,5 +1,6 @@
 // import Markdoc from "@markdoc/markdoc";
 import { defineConfig } from "vite";
+import Markdoc from "@markdoc/markdoc";
 import config from "./zmarkdoc.mjs";
 
 function renderMarkdocToHtml(mdoc, config) {
