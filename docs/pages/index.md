@@ -12,14 +12,14 @@ This is work in progress.
 
 ---
 
-### Session 1: **Introduction & Concepts**
+### Session 1: [**Introduction & Concepts**](/introduction-concepts)
 
 - Challenges for ML driven Operations in Production
 - Requirements: Reliable, Scalable, Maintainable, Adaptable
 - Considerations: Framing, Objectives, Constraints & Phases
 - Thinking in Systems: Application, Business and Infrastructure
 
-### Session 2: **Systems & Operations**
+### Session 2: [**Systems & Operations**](/systems-operations)
 
 - Current Landscape and Maturity Level for ML Ops
 - Define ML Ops: Requirements, Considerations, Interfaces, Data & Model
