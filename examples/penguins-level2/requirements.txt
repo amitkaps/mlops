@@ -1,0 +1,2 @@
+FastAPI>=0.79.0
+uvicorn>=0.18.2
