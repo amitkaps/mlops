@@ -7,12 +7,13 @@ Usage:
 """
 import pandas as pd
 import numpy as np
+import json
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn import metrics
 
 import pickle
-import config
+from . import config
 
 def read_dataset():
     return pd.read_csv(config.dataset_path)
@@ -23,16 +24,26 @@ def process_dataset(df):
 
 def compute_metrics(model, X_train, X_test, y_train, y_test):
     y_pred = model.predict(X_train)
-    accuracy = metrics.accuracy_score(y_true=y_train, y_pred=y_pred)
-    print("Accuracy on training data:", accuracy)
+    train_accuracy = metrics.accuracy_score(y_true=y_train, y_pred=y_pred)
+    print("Accuracy on training data:", train_accuracy)
 
     y_pred = model.predict(X_test)
-    accuracy = metrics.accuracy_score(y_true=y_test, y_pred=y_pred)
-    print("Accuracy on test data:", accuracy)
+    test_accuracy = metrics.accuracy_score(y_true=y_test, y_pred=y_pred)
+    print("Accuracy on test data:", test_accuracy)
 
     cm = metrics.confusion_matrix(y_true=y_test, y_pred=y_pred, labels=model.classes_)
     print("Confusion Matrix:")
     print(cm)
+
+    _metrics = {
+        "train_accuracy": train_accuracy,
+        "test_accuracy": test_accuracy,
+        "confusion_matrix": cm.tolist()
+    }
+    with open(config.metrics_path, "w") as f:
+        json.dump(_metrics, f)
+    print("wrote the metrics to", config.metrics_path)
+
 
 def train(df):
     columns = ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
