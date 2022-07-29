@@ -4,8 +4,11 @@
 ## Ignore www doc
 docs/dist
 
+### Python ###
+__pycache__/
+*.pyc
 
-## JupyterNotebooks ###
+### JupyterNotebooks ###
 # Checkpoints
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
