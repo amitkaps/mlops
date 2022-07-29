@@ -42,15 +42,14 @@ models/     -- model files
 penguins/   -- the main python code
 ```
 
-
 The code is organized into Python files instead of just notebooks.
 
 Some important files:
 
-- `train.py` contains the code for training the model
-- `predict.py` has code for serving the model as an API
-- `config.py` contains the configuration like dataset path and model path
-- `models.py` contains data model for penguin input data accepted by the API
+- `penguins/train.py` contains the code for training the model
+- `penguins/predict.py` has code for serving the model as an API
+- `penguins/config.py` contains the configuration like dataset path and model path
+- `penguins/models.py` contains data model for penguin input data accepted by the API
 - `requirements.txt` contains the python packages required to run this project
 
 ## The Setup
