@@ -16,23 +16,11 @@ To make a prediction:
         "body_mass_g": 3750
     }
     response = requests.post(service_url, json=penguin).json()
-    print(response)
+    print(response) # {"species":"Adelie"}
 
 """
-import pickle
 from fastapi import FastAPI
-from pydantic import BaseModel
-import config
-
-def read_model():
-    with open(config.model_path, "rb") as f:
-        return pickle.load(f)
-
-class Penguin(BaseModel):
-    bill_length_mm: float
-    bill_depth_mm: float
-    flipper_length_mm: float
-    body_mass_g: float
+from models import read_model, Penguin
 
 app = FastAPI()
 model = read_model()
