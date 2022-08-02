@@ -2,7 +2,7 @@
 """
 from pydantic import BaseModel
 import pickle
-import config
+from . import config
 
 class Penguin(BaseModel):
     """Data model to specify the input penguin data for prediction.

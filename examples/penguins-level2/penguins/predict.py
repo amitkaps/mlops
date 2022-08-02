@@ -20,7 +20,7 @@ To make a prediction:
 
 """
 from fastapi import FastAPI
-from models import read_model, Penguin
+from .models import read_model, Penguin
 
 app = FastAPI()
 model = read_model()
@@ -31,4 +31,11 @@ def predict(penguin: Penguin):
     data = [row]
     result = model.predict(data)
     return {"species": result[0]}
+
+
+def main():
+    import subprocess
+    app = "penguins.predict:app"
+    p = subprocess.call(["uvicorn", app], stdout=subprocess.PIPE)
+    p.wait()
 
