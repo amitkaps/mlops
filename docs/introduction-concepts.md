@@ -51,7 +51,7 @@
 
 ## Approaches in Building ML Platforms
 
-The more traditional approach is to have the data scientists build a POC and hand over to Data Engineer and ML Engineer to productionize their work.
+The more traditional approach is to have the data scientists build a POC and hand it over to Data Engineers and ML Engineers to productionize their work.
 
 ```
 ----------------------
@@ -63,7 +63,7 @@ The more traditional approach is to have the data scientists build a POC and han
 ----------------------
 ```
 
-Alternatively, the platform team enables the data science team to build end to end applications, while taking take of infrastructure and compute and data abstractions. The data scientists can pick the right tool that works for them and platform team tries hard to enable that.
+Alternatively, the platform team can enable the data science team to build end to end applications, while taking take of compute and data abstractions. The data scientists can pick the right tool that works for them and platform team tries hard to enable that.
 
 ```
 -------------------------
