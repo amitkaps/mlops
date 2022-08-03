@@ -1,0 +1,458 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Introduction & Concepts - Practical ML Operations (ML Ops)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Practical ML Operations (ML Ops)" class="md-header__button md-logo" aria-label="Practical ML Operations (ML Ops)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Practical ML Operations (ML Ops)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction & Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Practical ML Operations (ML Ops)" class="md-nav__button md-logo" aria-label="Practical ML Operations (ML Ops)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Practical ML Operations (ML Ops)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Practical ML Operations (MLOps)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction-concepts/" class="md-nav__link">
+        Introduction & Concepts
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-expecation" class="md-nav__link">
+    Course Expecation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-focus" class="md-nav__link">
+    What is the Focus?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare-project-vs-productsystem-approach" class="md-nav__link">
+    Compare: Project vs. Product/System Approach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-exploration-vs-production-in-ml" class="md-nav__link">
+    Comparing: Exploration vs. Production in ML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-software-systems-vs-ml-systems" class="md-nav__link">
+    Comparing: Software Systems vs. ML Systems
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing: Software Systems vs. ML Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolution-of-building-software" class="md-nav__link">
+    Evolution of Building Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="introduction-concepts">Introduction &amp; Concepts</h1>
+<ul>
+<li>Challenges for ML driven Operations in Production</li>
+<li>Requirements: Reliable, Scalable, Maintainable, Adaptable</li>
+<li>Considerations: Framing, Objectives, Constraints &amp; Phases</li>
+<li>Thinking in Systems: Application, Business and Infrastructure</li>
+</ul>
+<h2 id="intro">Intro</h2>
+<ul>
+<li>Instructor Introduction</li>
+<li>Participant Introduction</li>
+<li>Experience ML Experience</li>
+<li>Personal ML Workflow</li>
+<li>Org ML Workflow / Infra / Setup for ML Right now</li>
+<li>Sample Project in Production (2 - 3 Examples)</li>
+<li>Type: ML / DL / Forecasting</li>
+<li>Process</li>
+<li>Data Storage / ELT</li>
+<li>Compute Abstraction (Laptop / Cloud)</li>
+<li>Productionion WorkFlow</li>
+<li>Monitoring &amp; ReTraining</li>
+<li>Grouping People with Diverse Background</li>
+</ul>
+<h2 id="course-expecation">Course Expecation</h2>
+<ul>
+<li>Expectation</li>
+<li>Not focussed on ML/DL model building</li>
+<li>Framework, System Agnostics</li>
+</ul>
+<h2 id="what-is-the-focus">What is the Focus?</h2>
+<ul>
+<li>Difference between PoC and Production ML System</li>
+<li>Building the Model (Algorithm) is easy?</li>
+<li>Solving real world problems</li>
+<li>Success of ML Projects in Production is low?</li>
+<li>Software Engineering vs. Programming -&gt; Change over Time</li>
+</ul>
+<h2 id="objectives">Objectives</h2>
+<h3 id="compare-project-vs-productsystem-approach">Compare: Project vs. Product/System Approach</h3>
+<h3 id="comparing-exploration-vs-production-in-ml">Comparing: Exploration vs. Production in ML</h3>
+<ul>
+<li>Objective | Model Performance | Business Performance</li>
+<li>Computation Priority | Fast Training | Fast Inference, low latency</li>
+<li>Data | Clean / Static / Historical | Messy / Dynamic / + Streaming / Changing / Privacy</li>
+<li>Fairness / Interepretability | Maybe | Important</li>
+</ul>
+<h3 id="comparing-software-systems-vs-ml-systems">Comparing: Software Systems vs. ML Systems</h3>
+<ul>
+<li>Diagram for Software Systems</li>
+<li>Code - Modular Design</li>
+<li>Data - Separate</li>
+<li>Tests (Unit Test, Integration Test)</li>
+<li>Build (Package)</li>
+<li>Deployment (Package)</li>
+</ul>
+<p>Deploying Reliably is hard (Case Example)
+Deploy Multiple times at a times (DevOps Evolution)
+Speed of delivery</p>
+<h4 id="evolution-of-building-software">Evolution of Building Software</h4>
+<ul>
+<li>Evolution over years:</li>
+<li>Shift from separate Dev QA, SysAdmin -&gt; DevOps Role -&gt; CI/CD</li>
+<li>1 deploy a month to 100s of deploy per day</li>
+<li>UI Developments
+  Model Update - DevOps vs Normal</li>
+</ul>
+<p>What is different</p>
+<ul>
+<li>Team Skills: Roles</li>
+<li>Development</li>
+<li>Testing</li>
+<li>Deployment</li>
+<li>Production</li>
+</ul>
+<h1 id="requirements-of-an-ml-systems">Requirements of an ML Systems</h1>
+<ul>
+<li>Reliable: Correct function at desired level of performance and failure resistance</li>
+<li>Fail Silently</li>
+<li>Scalability: Scale Up and Down: Data Volume, Traffic Volume and Complexity</li>
+<li>Maintainbility: People / Skills - Hetrogenous Tools &amp; Background</li>
+<li>Adaptibility: Data Distribution and Business Requirement - React Quickly</li>
+</ul>
+<h2 id="exercise">Exercise</h2>
+<ul>
+<li>
+<p>Real Life Example (Take Three - Select One)</p>
+</li>
+<li>
+<p>Structured Data</p>
+</li>
+<li>Simple Problem (not multi-objective)</li>
+<li>Inference at Real-Time with</li>
+</ul>
+<h2 id="considerations-framing-objectives-constraints-phases">Considerations: Framing, Objectives, Constraints &amp; Phases</h2>
+<ul>
+<li>Framing: Right Problem for the ML Objection</li>
+<li>Example: MultiClass Decision Boundary (Which App to open)</li>
+<li>Objective:</li>
+<li>ML Objective: Performance, Latency</li>
+<li>Business Objective: Cost, ROI, Regulation</li>
+<li>Baseline, Threshold, False Negative, Interpretability, Confidence</li>
+<li>Constrain: Time &amp; Budget (More Powerful Machine, More Experiment), Privacy</li>
+<li>Phased: Heuristic, Simple, ML, Complex</li>
+</ul>
+<h1 id="thinking-in-systems-application-business-and-infrastructure">Thinking in Systems: Application, Business and Infrastructure</h1>
+<ul>
+<li>Link to the Exercise</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
