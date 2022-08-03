@@ -1,0 +1,8 @@
+site_name: Practical ML Operations (ML Ops)
+
+theme:
+  name: material
+
+nav:
+  - index.md
+  - introduction-concepts.md
