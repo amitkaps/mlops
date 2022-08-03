@@ -1,6 +1,8 @@
 # Practical ML Operations (MLOps)
 
-*This is work in progress.*
+!!! note
+
+    This is work in progress.
 
 ## _Scope & Session Plan_
 
