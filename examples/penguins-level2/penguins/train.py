@@ -14,9 +14,8 @@ from sklearn import metrics
 
 import pickle
 from . import config
-
-def read_dataset():
-    return pd.read_csv(config.dataset_path)
+from . import data
+from . import validate
 
 def process_dataset(df):
     columns = ['species', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
@@ -76,7 +75,8 @@ def save_model(model):
     print("saved the model to", config.model_path)
 
 def main():
-    df = read_dataset()
+    df = data.load_data()
+    validate.validate_data(df)
     df = process_dataset(df)
     model = train(df)
     save_model(model)
