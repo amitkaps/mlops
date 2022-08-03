@@ -48,3 +48,35 @@
 | Monitoring      | | | |
 | Docs            | | | |
 | Structure       | | | |
+
+## Approaches in Building ML Platforms
+
+The more traditional approach is to have the data scientists build a POC and hand over to Data Engineer and ML Engineer to productionize their work.
+
+```
+----------------------
+    DS - Prototype
+----------------------
+    DE   |   ME
+----------------------
+      Platform
+----------------------
+```
+
+Alternatively, the platform team enables the data science team to build end to end applications, while taking take of infrastructure and compute and data abstractions. The data scientists can pick the right tool that works for them and platform team tries hard to enable that.
+
+```
+-------------------------
+User        Model
+DS          Version
+-------------------------
+Platform    Orchestrator
+            Compute
+            Data
+-------------------------
+```
+
+Not convinced, check out the post [Aggressively Helpful Platform Teams][1] from Stitchfix.
+
+[1]: https://multithreaded.stitchfix.com/blog/2021/02/09/aggressively-helpful-platform-teams/
+
