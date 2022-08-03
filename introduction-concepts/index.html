@@ -261,6 +261,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#approaches-in-building-ml-platforms" class="md-nav__link">
+    Approaches in Building ML Platforms
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -325,6 +332,13 @@
         <li class="md-nav__item">
   <a href="#ml-systems" class="md-nav__link">
     ML Systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approaches-in-building-ml-platforms" class="md-nav__link">
+    Approaches in Building ML Platforms
   </a>
   
 </li>
@@ -457,6 +471,27 @@
 </tr>
 </tbody>
 </table>
+<h2 id="approaches-in-building-ml-platforms">Approaches in Building ML Platforms</h2>
+<p>The more traditional approach is to have the data scientists build a POC and hand over to Data Engineer and ML Engineer to productionize their work.</p>
+<pre><code>----------------------
+    DS - Prototype
+----------------------
+    DE   |   ME
+----------------------
+      Platform
+----------------------
+</code></pre>
+<p>Alternatively, the platform team enables the data science team to build end to end applications, while taking take of infrastructure and compute and data abstractions. The data scientists can pick the right tool that works for them and platform team tries hard to enable that.</p>
+<pre><code>-------------------------
+User        Model
+DS          Version
+-------------------------
+Platform    Orchestrator
+            Compute
+            Data
+-------------------------
+</code></pre>
+<p>Not convinced, check out the post <a href="https://multithreaded.stitchfix.com/blog/2021/02/09/aggressively-helpful-platform-teams/">Aggressively Helpful Platform Teams</a> from Stitchfix.</p>
 
               
             </article>
