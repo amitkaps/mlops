@@ -20,18 +20,18 @@ jobs:
       - name: Check out your repository using git
         uses: actions/checkout@v2
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v2
+      - name: setup python
+        uses: actions/setup-python@v2
         with:
-          node-version: 16
+          python-version: 3.10
 
       # Not using npm? Change `npm ci` to `yarn install` or `pnpm i`
       - name: Install dependencies
-        run: npm ci
+        run: pip install mkdocs-material
 
       # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
       - name: Build Documentation
-        run: npm run build
+        run: mkdics build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -39,4 +39,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # `./dist` is the default Astro build directory.
           # If you changed that, update it here too.
-          publish_dir: ./docs/dist
+          publish_dir: ./site
