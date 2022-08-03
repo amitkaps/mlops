@@ -31,7 +31,7 @@ jobs:
 
       # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
       - name: Build Documentation
-        run: mkdics build
+        run: mkdocs build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
