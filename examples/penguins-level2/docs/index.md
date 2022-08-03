@@ -88,7 +88,7 @@ To train the model, run:
 ```
 $ python run.py train
 ...
-saved the model to model.pkl
+saved the model to models/model.pkl
 ```
 
 To run the prediction service:
