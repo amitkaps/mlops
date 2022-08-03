@@ -5,3 +5,4 @@ uvicorn>=0.18.2
 jupyterlab>=3.2.9
 mkdocs-material>=8.2.3
 pandera
+pytest

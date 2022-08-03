@@ -16,3 +16,5 @@ metrics_path = os.path.join(BASE_PATH, "models", "model-metrics.json")
 
 # Path to the input data for training
 data_path = os.path.join(BASE_PATH, "..", "..", "datasets", "palmerpenguins", "penguins.csv")
+
+test_data_path = os.path.join(BASE_PATH, "data", "sample_penguins.csv")
