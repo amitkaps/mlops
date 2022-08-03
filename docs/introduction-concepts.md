@@ -29,15 +29,14 @@
 
 ## ML Systems
 
-### Level 1: Snowflake
+| Level |  |
+| ----- | - |
+| **Level 1**<br>Snowflake | Business Requirements<br>-> POC / Feasibility<br>-> Data (ingest / refine or transform / preprocess)<br>-> Model (Architecture / weights / hyper parameters / input-output)<br>-> Deploy |
+| **Level 2**<br>Repeatable /Reproduceable | same flow, different person/env |
+| **Level 3**<br>Repeatable over time | Experiment: data=constant model=different serve->None<br>Retraining: data=change model=same(weights change) serve -> new endpoint<br>Multiple (t1, t2): data=constant model=constant serve->canary/dev/prod |
+| **Level 4**<br>Automatic | |
 
-Business Requirements<br>
--> POC / Feasibility<br>
--> Data (ingest / refine or transform / preprocess)<br>
--> Model (Architecture / weights / hyper parameters / input-output)<br>
--> Deploy
-
-### Level 2: Repeatable / Reproduceable
+---
 
 | Components      | Code  | Data | Model |
 | --------------- | ----- | ---- | ----- |
