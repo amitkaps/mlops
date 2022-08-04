@@ -2,7 +2,7 @@
 
 ## Model Envelope
 
-Install model_envelope library using the following command:
+Install [model-envelope](https://github.com/anandology/model-envelope) library using the following command:
 
 ```
 $ pip install -U git+https://github.com/anandology/model-envelope
