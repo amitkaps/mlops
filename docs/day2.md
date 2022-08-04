@@ -58,9 +58,9 @@ How can you test the behaviour of your model?
 
 **Exercise: Classification of Diamonds**
 
-Look at the diamonds examples in the [mlops repository][mlops]. The example in the notebook is just a notebook
+Look at the diamonds example in the [mlops repository][mlops]. In this example, all the code is in a notebook.
 
-- make the training process repeatable and reproduceable. You can use the [cookiecutter-mlops][] to get started.
+- make the training process repeatable and reproduceable by moving the code from notebook to a git repo. You can use the [cookiecutter-mlops][] to get started.
 - add tests to verify the code is working as expected
 - add data valiadtion as part of the training pipeline to alert for schema changes, quality or change in the data distribution
 - how can you test the model?
