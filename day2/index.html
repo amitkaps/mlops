@@ -249,6 +249,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    Evaluation &amp; Metrics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-validation" class="md-nav__link">
+    Testing &amp; Validation
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing &amp; Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-testing-unit-integration-system-acceptance" class="md-nav__link">
+    Code Testing: Unit, Integration, System &amp; Acceptance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-testing-schema-expectations-quality-distribution-skew" class="md-nav__link">
+    Data Testing: Schema, Expectations, Quality, Distribution Skew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-testing-training-evaluation-inference-deployment" class="md-nav__link">
+    Model Testing: Training, Evaluation, Inference &amp; Deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavioural-testing-invariance-functionality-directionality" class="md-nav__link">
+    Behavioural Testing: Invariance, Functionality, Directionality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -290,6 +338,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    Evaluation &amp; Metrics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-validation" class="md-nav__link">
+    Testing &amp; Validation
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing &amp; Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-testing-unit-integration-system-acceptance" class="md-nav__link">
+    Code Testing: Unit, Integration, System &amp; Acceptance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-testing-schema-expectations-quality-distribution-skew" class="md-nav__link">
+    Data Testing: Schema, Expectations, Quality, Distribution Skew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-testing-training-evaluation-inference-deployment" class="md-nav__link">
+    Model Testing: Training, Evaluation, Inference &amp; Deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavioural-testing-invariance-functionality-directionality" class="md-nav__link">
+    Behavioural Testing: Invariance, Functionality, Directionality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -309,6 +405,54 @@
 <p>Install <a href="https://github.com/anandology/model-envelope">model-envelope</a> library using the following command:</p>
 <pre><code>$ pip install -U git+https://github.com/anandology/model-envelope
 </code></pre>
+<h2 id="evaluation-metrics">Evaluation &amp; Metrics</h2>
+<p>ML Models in production:</p>
+<ul>
+<li>Returns</li>
+<li>Returns: Class - option / Comment - text -&gt; Allow/block next step in UI</li>
+<li>Invoice PDF: Item detail json (#, date, name)</li>
+<li>Delivery time prediction: Location, seller/source -&gt; #days</li>
+<li>Customer Address -&gt; Lat/long (gold dataset: address -&gt; lat/long, NLP classification)</li>
+<li>Forecasting -&gt; Demand next one month</li>
+<li>Cancellation before delivery: user pincode -&gt; COD yes/no</li>
+<li>Question -&gt; retrive similar answered questions</li>
+</ul>
+<h2 id="testing-validation">Testing &amp; Validation</h2>
+<h3 id="code-testing-unit-integration-system-acceptance">Code Testing: Unit, Integration, System &amp; Acceptance</h3>
+<ul>
+<li>Test each of the training steps is working as expected</li>
+<li>Test if the entire training pipeline is working without any errors</li>
+<li>Test if the training and using the model inference is working as expected</li>
+</ul>
+<p>How do you do each of these? Would keeping a sample dataset help? Do you also need to keep expected results?</p>
+<h3 id="data-testing-schema-expectations-quality-distribution-skew">Data Testing: Schema, Expectations, Quality, Distribution Skew</h3>
+<ul>
+<li>How to make sure the schema of input data is as expected?</li>
+<li>Can you add some expectations on the data like the min/max values, allowed patterns or possible options for a categorical data?</li>
+<li>Would a check on the quality of data be useful? Like the % of missing/invalid values?</li>
+<li>Can you make sure the distibution of data has not drifted too much from your first trianing?</li>
+</ul>
+<p>The Python library <a href="https://pandera.readthedocs.io/">Pandera</a> has support for all these kinds of checks.</p>
+<h3 id="model-testing-training-evaluation-inference-deployment">Model Testing: Training, Evaluation, Inference &amp; Deployment</h3>
+<ul>
+<li>Can you make sure the training accuracy is more than a minimum expected value?</li>
+<li>Can you make sure thr training accuracy is always more than the previous run?</li>
+<li>Is there a test suite that you can run on a deployed model to ensure it is working correctly before taking it live?</li>
+</ul>
+<h3 id="behavioural-testing-invariance-functionality-directionality">Behavioural Testing: Invariance, Functionality, Directionality</h3>
+<p>How can you test the behaviour of your model?
+- invariance: what are the inputs that should produce the same inference
+- directionality: what are the inputs that should not produce the same inference
+- functionality: minimum functionality that you expect the model to always predict as expected</p>
+<p><strong>Exercise: Classification of Diamonds</strong></p>
+<p>Look at the diamonds examples in the <a href="https://github.com/amitkaps/mlops/">mlops repository</a>. The example in the notebook is just a notebook</p>
+<ul>
+<li>make the training process repeatable and reproduceable. You can use the <a href="https://github.com/anandology/cookiecutter-mlops/">cookiecutter-mlops</a> to get started.</li>
+<li>add tests to verify the code is working as expected</li>
+<li>add data valiadtion as part of the training pipeline to alert for schema changes, quality or change in the data distribution</li>
+<li>how can you test the model?</li>
+</ul>
+<p>Also, the dataset has data for three seperate months. Run training for each of this data chunk and make sure that the data validation is happening as expected.</p>
 
               
             </article>
