@@ -52,6 +52,7 @@ The Python library [Pandera][] has support for all these kinds of checks.
 ### Behavioural Testing: Invariance, Functionality, Directionality
 
 How can you test the behaviour of your model?
+
 - invariance: what are the inputs that should produce the same inference
 - directionality: what are the inputs that should not produce the same inference
 - functionality: minimum functionality that you expect the model to always predict as expected
