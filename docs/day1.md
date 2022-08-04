@@ -1,4 +1,4 @@
-# Introduction & Concepts
+# Day 1
 
 ## Expectations
 
@@ -76,7 +76,7 @@ Platform    Orchestrator
 -------------------------
 ```
 
-Not convinced, check out the post [Aggressively Helpful Platform Teams][1] from Stitchfix.
+Not convinced? Check out the post [Aggressively Helpful Platform Teams][1] from Stitchfix.
 
 [1]: https://multithreaded.stitchfix.com/blog/2021/02/09/aggressively-helpful-platform-teams/
 
