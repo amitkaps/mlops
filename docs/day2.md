@@ -24,6 +24,8 @@ ML Models in production:
 
 ## Testing & Validation
 
+> Fail Early, Fail Often
+
 ### Code Testing: Unit, Integration, System & Acceptance
 
 * Test each of the training steps is working as expected
