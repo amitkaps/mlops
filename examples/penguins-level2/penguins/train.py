@@ -50,7 +50,7 @@ def setup_mlflow():
 
     mlflow.set_tracking_uri(config.mlflow_trcking_uri)
     mlflow.set_experiment(config.mlflow_experiment)
-    mlflow.autolog()
+    mlflow.sklearn.autolog(registered_model_name="penguins-classification")
 
 def train(df):
     setup_mlflow()
