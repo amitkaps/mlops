@@ -1,0 +1,8 @@
+site_name: Diamonds
+
+# The default port 8000 and it is also used by the prediction service.
+# Using port 7000 to avoid conflict.
+dev_addr: "127.0.0.1:7000"
+
+theme:
+  name: material
