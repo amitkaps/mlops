@@ -18,3 +18,9 @@ metrics_path = os.path.join(BASE_PATH, "models", "model-metrics.json")
 data_path = os.path.join(BASE_PATH, "..", "..", "datasets", "palmerpenguins", "penguins.csv")
 
 test_data_path = os.path.join(BASE_PATH, "data", "sample_penguins.csv")
+
+mlflow_trcking_uri = None
+mlflow_experiment = None
+
+# mlflow_trcking_uri = "https://mlflow.pipal.in/"
+# mlflow_experiment = "Penguins Classification"

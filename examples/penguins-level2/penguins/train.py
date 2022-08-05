@@ -11,6 +11,7 @@ import json
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn import metrics
+import mlflow
 
 import pickle
 from . import config
@@ -43,8 +44,17 @@ def compute_metrics(model, X_train, X_test, y_train, y_test):
         json.dump(_metrics, f)
     print("wrote the metrics to", config.metrics_path)
 
+def setup_mlflow():
+    if not config.mlflow_trcking_uri:
+        return
+
+    mlflow.set_tracking_uri(config.mlflow_trcking_uri)
+    mlflow.set_experiment(config.mlflow_experiment)
+    mlflow.autolog()
 
 def train(df):
+    setup_mlflow()
+
     columns = ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
     print("selecting columns", columns)
     X = df[columns]
