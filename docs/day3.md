@@ -101,3 +101,14 @@ with mlflow.start_run():
     test_accuracy = metrics.accuracy_score(y_true=y_test, y_pred=y_pred)
     print("Accuracy on test data:", test_accuracy)
 ```
+
+### Running your own mlflow server
+
+You can start an mlflow server using the following command:
+
+```
+mlflow server \
+    --backend-store-uri sqlite:///store.db \
+    --artifacts-destination $PWD/artifacts \
+    --serve-artifacts
+```
