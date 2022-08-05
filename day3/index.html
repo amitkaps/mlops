@@ -286,6 +286,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#running-your-own-mlflow-server" class="md-nav__link">
+    Running your own mlflow server
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -350,6 +357,13 @@
           <li class="md-nav__item">
   <a href="#training-a-scikit-learn-model" class="md-nav__link">
     Training a scikit-learn model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-your-own-mlflow-server" class="md-nav__link">
+    Running your own mlflow server
   </a>
   
 </li>
@@ -454,6 +468,13 @@ with mlflow.start_run():
     y_pred = model.predict(X_test)
     test_accuracy = metrics.accuracy_score(y_true=y_test, y_pred=y_pred)
     print(&quot;Accuracy on test data:&quot;, test_accuracy)
+</code></pre>
+<h3 id="running-your-own-mlflow-server">Running your own mlflow server</h3>
+<p>You can start an mlflow server using the following command:</p>
+<pre><code>mlflow server \
+    --backend-store-uri sqlite:///store.db \
+    --artifacts-destination $PWD/artifacts \
+    --serve-artifacts
 </code></pre>
 
               
