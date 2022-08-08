@@ -10,9 +10,8 @@ $ pip install -U git+https://github.com/anandology/model-envelope
 
 ## Evaluation & Metrics
 
-ML Models in production:
+Challenges with ML Models:
 
-* Returns
 * Returns: Class - option / Comment - text -> Allow/block next step in UI
 * Invoice PDF: Item detail json (#, date, name)
 * Delivery time prediction: Location, seller/source -> #days
